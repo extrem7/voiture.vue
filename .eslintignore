@@ -1,0 +1,4 @@
+!.storybook
+!.lintstagedrc.js
+public/css
+public/js

@@ -83,6 +83,7 @@ module.exports = {
       {
         devDependencies: [
           '.eslintrc.cjs',
+          'vite.config.ts',
           '**/*.stories.ts',
           '**/*.test.ts',
           '**/mock.ts',
