@@ -1,0 +1,25 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.web.json",
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "./storybook/*"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "typeRoots": [
+      "types",
+      "./node_modules/@types"
+    ],
+    "types": [
+      "vite/client",
+      "vitest/globals"
+    ],
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
+  }
+}
