@@ -8,7 +8,10 @@
     "test:unit": "vitest --environment jsdom",
     "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
-    "commit": "cz"
+    "commit": "cz",
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable"
   },
   "dependencies": {
     "pinia": "^2.0.13",
@@ -16,6 +19,8 @@
     "vue-router": "^4.0.14"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "@rushstack/eslint-patch": "^1.1.0",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^16.11.26",
@@ -29,7 +34,9 @@
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.5.0",
     "eslint-plugin-vue": "^8.2.0",
+    "husky": "^7.0.0",
     "jsdom": "^19.0.0",
+    "pinst": "^3.0.0",
     "prettier": "^2.5.1",
     "typescript": "~4.6.3",
     "vite": "^2.9.1",
