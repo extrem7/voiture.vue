@@ -2,7 +2,7 @@
 import type { Parameters } from '@storybook/addons'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
 
-import App from '~/app/App.vue'
+import { appDecorator } from './lib'
 
 export const parameters: Parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -21,9 +21,4 @@ export const parameters: Parameters = {
   viewport: { viewports: INITIAL_VIEWPORTS },
 }
 
-export const decorators = [
-  () => ({
-    components: { App },
-    template: '<App><story /></App>',
-  }),
-]
+export const decorators = [appDecorator]

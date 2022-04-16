@@ -2,9 +2,9 @@ import path from 'path'
 import type { UserConfig } from 'vite'
 import VueJsx from '@vitejs/plugin-vue-jsx'
 import type {
-  StorybookConfig,
   CoreConfig,
   Options,
+  StorybookConfig,
 } from '@storybook/core-common'
 
 import { config as baseConfig } from '../vite.config'
@@ -31,6 +31,7 @@ const storybookConfig: CustomizedStorybookConfig = {
   ],
   framework: '@storybook/vue3',
   core: { builder: '@storybook/builder-vite' },
+  features: { storyStoreV7: true },
   staticDirs: ['../public'],
   viteFinal(config) {
     const plugins = config.plugins ?? []
