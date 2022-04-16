@@ -68,6 +68,7 @@ module.exports = {
     '@typescript-eslint/no-shadow': ['error'],
 
     // import rules
+    'sort-imports': ['error', { ignoreDeclarationSort: true }],
     'import/extensions': [
       'error',
       'ignorePackages',
