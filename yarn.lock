@@ -3391,6 +3391,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/forms@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "@tailwindcss/forms@npm:0.5.0"
+  dependencies:
+    mini-svg-data-uri: ^1.2.3
+  peerDependencies:
+    tailwindcss: ">=3.0.0 || >= 3.0.0-alpha.1"
+  checksum: 3e57584871bc41947f2a1518deaf69894b75745dee959bb2ba475c819eadec2b86f8bf6e73a051ddab627df4c8c3ad1d18239d48b3a95211be3b11a04dee0511
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -11583,6 +11594,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mini-svg-data-uri@npm:^1.2.3":
+  version: 1.4.4
+  resolution: "mini-svg-data-uri@npm:1.4.4"
+  bin:
+    mini-svg-data-uri: cli.js
+  checksum: 997f1fbd8d59a70f03761e18626d335197a3479cb9d1ff75678e4b64b864d32a0b8fc18115eabde035e5299b8b4a354a78e57dd6ac10f9d604162a6170898d09
+  languageName: node
+  linkType: hard
+
 "minimalistic-assert@npm:^1.0.0, minimalistic-assert@npm:^1.0.1":
   version: 1.0.1
   resolution: "minimalistic-assert@npm:1.0.1"
@@ -16315,6 +16335,7 @@ __metadata:
     "@storybook/addon-links": ^6.4.22
     "@storybook/builder-vite": ^0.1.28
     "@storybook/vue3": ^6.4.22
+    "@tailwindcss/forms": ^0.5.0
     "@types/jsdom": ^16.2.14
     "@types/node": ^16.11.26
     "@typescript-eslint/parser": ^5.19.0
