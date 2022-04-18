@@ -1,4 +1,4 @@
-import { computed } from 'vue'
+import { type Ref, computed } from 'vue'
 import type { UseFetchOptions } from '@vueuse/core'
 
 import { useAutoRia } from './client'
@@ -16,4 +16,18 @@ export function useCategories(useFetchOptions: UseFetchOptions = {}) {
   const categories = computed(() => data.value ?? [])
 
   return { categories, ...rest }
+}
+
+export function useMarks(
+  id: Ref<number>,
+  useFetchOptions: UseFetchOptions = {}
+) {
+  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+    computed(() => api.marks(id.value)),
+    { ...useFetchOptions, refetch: true }
+  ).json()
+
+  const marks = computed(() => data.value ?? [])
+
+  return { marks, ...rest }
 }
