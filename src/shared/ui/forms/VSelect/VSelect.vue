@@ -1,6 +1,17 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineEmits<{
+  (e: 'update:modelValue', modelValue?: number): void
+}>()
+
+defineProps<{
+  modelValue?: number
+}>()
+</script>
 <template>
-  <select class="py-1 pl-2 rounded-[3px] border-none cursor-pointer">
+  <select
+    class="py-1 pl-2 rounded-[3px] border-none cursor-pointer"
+    @change="$emit('update:modelValue', ($event.target as any).value)"
+  >
     <slot />
   </select>
 </template>
