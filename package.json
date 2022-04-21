@@ -2,14 +2,15 @@
   "name": "voiture.vue",
   "version": "0.0.0",
   "scripts": {
-    "start": "vite",
+    "start": "yarn api & vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview --port 5050",
+    "api":"node server",
     "test:unit": "vitest --environment jsdom",
     "lint": "yarn lint:eslint && yarn lint:vue-tsc",
     "lint:eslint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "lint:vue-tsc": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "yarn api & start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "commit": "cz",
     "postinstall": "husky install && yarn rmreact",
@@ -19,6 +20,9 @@
   },
   "dependencies": {
     "@vueuse/core": "^8.2.6",
+    "axios": "^0.26.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
     "pinia": "^2.0.13",
     "vue": "^3.2.31",
     "vue-router": "^4.0.14"
