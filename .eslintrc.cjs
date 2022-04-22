@@ -29,6 +29,10 @@ module.exports = {
     'import/resolver': {
       typescript: {},
     },
+    tailwindcss: {
+      prependCustom: true,
+      whitelist: ['^v-[a-zA-Z-__]+'],
+    },
   },
   plugins: ['tailwindcss'],
   extends: [
