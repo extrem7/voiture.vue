@@ -32,3 +32,31 @@ export function useModels(
 
   return { models, ...rest }
 }
+
+export function useMarks(
+  id: Ref<number>,
+  useFetchOptions: UseFetchOptions = {}
+) {
+  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+    computed(() => api.marks(id.value)),
+    { ...useFetchOptions, refetch: true }
+  ).json()
+
+  const marks = computed(() => data.value ?? [])
+
+  return { marks, ...rest }
+}
+
+export function useBody(
+  id: Ref<number>,
+  useFetchOptions: UseFetchOptions = {}
+) {
+  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+    computed(() => api.body(id.value)),
+    { ...useFetchOptions, refetch: true }
+  ).json()
+
+  const body = computed(() => data.value ?? [])
+
+  return { body, ...rest }
+}
