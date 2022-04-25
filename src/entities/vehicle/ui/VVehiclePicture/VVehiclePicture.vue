@@ -1,8 +1,9 @@
 <script setup lang="ts">
 defineProps({
+  src: { type: String, required: true },
   isNew: Boolean,
   isVerifiedCode: Boolean,
-  src: { type: String, required: true },
+  topPosition: { type: Number, default: undefined },
 })
 </script>
 
@@ -29,5 +30,19 @@ defineProps({
       </svg>
       {{ isVerifiedCode ? 'Перевірений VIN-код' : 'Новий' }}
     </span>
+    <span
+      v-if="topPosition"
+      class="v-vehicle-picture__triangle after:block after:absolute absolute after:top-0 top-[10px] after:right-[-8px] py-[2px] px-2 mt-[23px] text-xs text-white bg-green-light"
+    >
+      ТОП {{ topPosition }}
+    </span>
   </div>
 </template>
+
+<style>
+.v-vehicle-picture__triangle::after {
+  border-style: solid;
+  border-width: 10px 0 10px 8px;
+  border-color: transparent transparent transparent theme('colors.green-light');
+}
+</style>

@@ -24,3 +24,6 @@ IsNew.args = { isNew: true }
 
 export const IsVerifiedCode = Default.bind({})
 IsVerifiedCode.args = { isVerifiedCode: true }
+
+export const TopPosition = Default.bind({})
+TopPosition.args = { topPosition: 50 }
