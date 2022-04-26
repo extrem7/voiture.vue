@@ -32,3 +32,18 @@ export function useModels(
 
   return { models, ...rest }
 }
+
+export function useModelGroups(
+  id: Ref<number>,
+  idMarks: Ref<number>,
+  useFetchOptions: UseFetchOptions = {}
+) {
+  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+    computed(() => api.modelGroups(id.value, idMarks.value)),
+    { ...useFetchOptions, refetch: true }
+  ).json()
+
+  const groups = computed(() => data.value ?? [])
+
+  return { groups, ...rest }
+}
