@@ -31,36 +31,53 @@ const links = [
 </script>
 
 <template>
-  <VMenuLink
-    class="relative after:absolute after:top-0 after:left-0 after:w-[110%] after:h-[50px]"
-    dropdown
-    @mouseover="isDropdown = true"
-    @mouseleave="isDropdown = false"
-  >
-    <slot />
-    <div
-      v-show="isDropdown"
-      class="absolute top-12 py-2 px-4 w-[320px] bg-[#fff] border-[1px] border-dark/30 duration-200"
+  <div class="inline-block relative">
+    <VMenuLink
+      class="relative after:absolute after:top-0 after:left-0 after:w-[110%] after:h-[50px]"
+      dropdown
+      @mouseover="isDropdown = true"
+      @mouseleave="isDropdown = false"
     >
-      <div
-        v-for="({ title, name, link, addition, id }, i) in links"
-        :key="id"
-        class="h-[24px]"
-      >
-        <p
-          v-if="title"
-          :class="[i === 0 ? '' : 'mt-2']"
-          class="text-[15px] text-[#818181] cursor-default"
+      <slot />
+      <Transition name="dropdown">
+        <div
+          v-show="isDropdown"
+          class="absolute top-12 py-2 px-4 w-[320px] bg-[#fff] border-[1px] border-dark/30"
         >
-          {{ title }}
-        </p>
-        <a
-          v-if="name"
-          class="text-sm text-[#256799] hover:underline"
-          :href="link"
-          >{{ name }} <span class="text-gray">{{ addition }}</span></a
-        >
-      </div>
-    </div>
-  </VMenuLink>
+          <div
+            v-for="({ title, name, link, addition, id }, i) in links"
+            :key="id"
+            class="h-[24px]"
+          >
+            <p
+              v-if="title"
+              :class="[i === 0 ? '' : 'mt-2']"
+              class="text-[15px] text-[#818181] cursor-default"
+            >
+              {{ title }}
+            </p>
+            <a
+              v-if="name"
+              class="text-sm text-[#256799] hover:underline"
+              :href="link"
+              >{{ name }} <span class="text-gray">{{ addition }}</span></a
+            >
+          </div>
+        </div>
+      </Transition>
+    </VMenuLink>
+  </div>
 </template>
+
+<style scoped>
+.dropdown-enter-active {
+  transition: all 0.3s ease;
+}
+.dropdown-leave-active {
+  transition: all 0.4s;
+}
+.dropdown-enter,
+.dropdown-leave-to {
+  opacity: 0;
+}
+</style>
