@@ -5,7 +5,10 @@ import { useAutoRia } from './client'
 import { api } from './routes'
 
 type CategoryAPI = { name: string; value: number }
+type ModelApi = { name: string; value: number }
 type CategoriesResponse = CategoryAPI[]
+type ModelGroupsResponse = ModelApi[]
+type ModelResponse = ModelApi[]
 
 export function useCategories(useFetchOptions: UseFetchOptions = {}) {
   const { data, ...rest } = useAutoRia<CategoriesResponse>(
@@ -23,7 +26,7 @@ export function useModels(
   idMarks: Ref<number>,
   useFetchOptions: UseFetchOptions = {}
 ) {
-  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+  const { data, ...rest } = useAutoRia<ModelResponse>(
     computed(() => api.models(id.value, idMarks.value)),
     { ...useFetchOptions, refetch: true }
   ).json()
@@ -38,7 +41,7 @@ export function useModelGroups(
   idMarks: Ref<number>,
   useFetchOptions: UseFetchOptions = {}
 ) {
-  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+  const { data, ...rest } = useAutoRia<ModelGroupsResponse>(
     computed(() => api.modelGroups(id.value, idMarks.value)),
     { ...useFetchOptions, refetch: true }
   ).json()

@@ -12,9 +12,9 @@ const someGroups = computed(() => groups.value.flat().slice(0, 10))
 
 <template>
   <div class="w-[300px]">
-    <!-- добавити динамічно 'назва марки' -->
+    <!-- TODO: add dynamic text -->
     <h2 class="mb-2 text-xl">Виберіть модель Мерседес</h2>
-    <!-- добавити динамічно -->
+    <!-- add dynamic text -->
     <div class="grid grid-cols-2 gap-2 mb-2">
       <a
         v-for="{ name, value } in isFull ? fullGroups : someGroups"
@@ -36,9 +36,9 @@ const someGroups = computed(() => groups.value.flat().slice(0, 10))
       class="relative before:absolute before:top-[5px] before:left-[105%] text-[#256799] before:border-8 before:border-x-blue/0 before:border-b-blue/0 border-dotted hover:border-solid duration-200 cursor-pointer"
       @click="isFull = !isFull"
     >
-      <!-- добавити динамічно 'назва марки' -->
+      <!-- TODO: add dynamic text -->
       {{ isFull ? 'Сховати' : `ще ${fullGroups.length - 10} моделей mercedes` }}
-      <!-- добавити динамічно -->
+      <!-- add dynamic text -->
     </span>
   </div>
 </template>
