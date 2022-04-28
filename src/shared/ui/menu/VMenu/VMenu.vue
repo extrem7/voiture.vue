@@ -1,7 +1,7 @@
 <script setup lang="ts">
+import { VMenuDropdown, VMenuLink } from '~/shared/ui'
 import tree from '~/shared/assets/elki.png'
 import plus from '~/shared/assets/plus.svg'
-import { VMenuDropdown, VMenuLink } from '~/shared/ui'
 </script>
 <template>
   <div class="flex justify-between w-[960px]">

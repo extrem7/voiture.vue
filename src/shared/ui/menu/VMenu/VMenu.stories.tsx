@@ -11,8 +11,6 @@ const meta: Meta = {
 
 export default meta
 
-export const Default: StoryFn<Props> = (props) => (
-  <VMenu {...props}>Menu Link</VMenu>
-)
+export const Default: StoryFn<Props> = (props) => <VMenu {...props}></VMenu>
 
 Default.storyName = 'VMenu'
