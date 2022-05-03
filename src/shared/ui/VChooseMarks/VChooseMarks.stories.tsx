@@ -12,7 +12,7 @@ const meta: Meta = {
 export default meta
 
 export const Default: StoryFn<Props> = (props) => (
-  <VChooseMarks {...props}>Menu Link</VChooseMarks>
+  <VChooseMarks {...props}></VChooseMarks>
 )
 
 Default.storyName = 'VChooseMarks'

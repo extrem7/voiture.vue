@@ -60,3 +60,17 @@ export function useBody(
 
   return { body, ...rest }
 }
+
+export function usePopular(
+  id: Ref<number>,
+  useFetchOptions: UseFetchOptions = {}
+) {
+  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+    computed(() => api.popular(id.value)),
+    { ...useFetchOptions, refetch: true }
+  ).json()
+
+  const popular = computed(() => data.value ?? [])
+
+  return { popular, ...rest }
+}

@@ -21,6 +21,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ['Arial', 'sans-serif'],
+      carLogos: ['logobrands23'],
     },
     extend: {},
   },
