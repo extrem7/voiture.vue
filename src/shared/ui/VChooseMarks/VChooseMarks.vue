@@ -4,12 +4,9 @@ import { useBody, useCategories, useMarks } from '~/shared/api'
 import { logo } from './lib'
 
 const idMarks = ref(1)
-// const idPopular = ref(2)
 const { marks } = useMarks(computed(() => idMarks.value))
 const { body } = useBody(computed(() => idMarks.value))
 const { categories } = useCategories()
-
-// const { popular } = usePopular(idPopular)
 
 const newMarks = computed(() => marks.value.slice(0, 15))
 const newBody = computed(() => body.value.slice(0, 31))
@@ -37,18 +34,18 @@ const newCategories = computed(() => categories.value.slice(0, 8))
     </div>
     <hr class="text-gray" />
     <div class="grid grid-cols-8 gap-x-6 py-6">
-      <a
+      <span
         v-for="({ name, value }, i) in idMarks <= 1 ? newMarks : newBody"
         :key="value"
         href="#"
-        class="overflow-hidden col-span-2 font-carLogos text-[#256799] hover:underline whitespace-nowrap"
+        class="overflow-hidden col-span-2 before:w-[40px] before:h-[40px] font-carLogos text-[#256799] hover:underline whitespace-nowrap cursor-pointer"
         :class="{
           [`before:content-['${logo[i + 1]}']`]: logo !== undefined,
           'col-span-1': idMarks === 1,
         }"
       >
         {{ name }}
-      </a>
+      </span>
       <a
         v-if="newBody.length > 30 || (newMarks.length === 15 && idMarks === 1)"
         href="#"

@@ -1,5 +1,5 @@
 export const logo: Record<number, string> = {
-  1: '\\e951',
+  1: '\\e900',
   2: '\\ea18',
   3: '\\e951',
   4: '\\e951',
