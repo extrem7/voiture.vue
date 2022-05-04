@@ -16,7 +16,7 @@ defineProps<{
 <template>
   <VSelect
     :model-value="modelValue"
-    @update:model-value="$emit('update:modelValue', ($event as any))"
+    @update:model-value="$emit('update:modelValue', +($event as any))"
   >
     <option v-for="{ name, value } in categories" :key="value" :value="value">
       {{ name }}
