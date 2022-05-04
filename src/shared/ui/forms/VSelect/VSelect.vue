@@ -10,6 +10,7 @@ defineProps<{
 <template>
   <select
     class="py-1 pl-2 rounded-[3px] border-none cursor-pointer"
+    :value="modelValue"
     @change="$emit('update:modelValue', ($event.target as any).value)"
   >
     <slot />
