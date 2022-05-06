@@ -1,16 +1,29 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed } from 'vue'
 import { VSelect } from '~/shared/ui'
 import { useModels } from '~/shared/api'
 
-const id = ref(1)
-const idMarks = ref(9)
+defineEmits<{
+  (e: 'update:modelValue', modelValue: number): void
+}>()
 
-const { models } = useModels(id, idMarks)
+const props = defineProps<{
+  modelValue: number
+  id: number
+  markId: number
+}>()
+
+const { models } = useModels(
+  computed(() => props.id),
+  computed(() => props.markId)
+)
 </script>
 
 <template>
-  <VSelect>
+  <VSelect
+    :model-value="modelValue"
+    @update:model-value="$emit('update:modelValue', +$event)"
+  >
     <option v-for="{ name, value } in models" :key="value" :value="value">
       {{ name }}
     </option>
