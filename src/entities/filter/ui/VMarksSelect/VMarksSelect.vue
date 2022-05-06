@@ -18,7 +18,7 @@ const { marks } = useMarks(computed(() => props.id))
 <template>
   <VSelect
     :model-value="modelValue"
-    @update:model-value="$emit('update:modelValue', +($event as any))"
+    @update:model-value="$emit('update:modelValue', +$event)"
   >
     <option v-for="{ name, value } in marks" :key="value" :value="value">
       {{ name }}
