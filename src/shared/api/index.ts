@@ -21,6 +21,20 @@ export function useCategories(useFetchOptions: UseFetchOptions = {}) {
   return { categories, ...rest }
 }
 
+export function useMarks(
+  id: Ref<number>,
+  useFetchOptions: UseFetchOptions = {}
+) {
+  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+    computed(() => api.marks(id.value)),
+    { ...useFetchOptions, refetch: true }
+  ).json()
+
+  const marks = computed(() => data.value ?? [])
+
+  return { marks, ...rest }
+}
+
 export function useModels(
   id: Ref<number>,
   idMarks: Ref<number>,

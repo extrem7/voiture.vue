@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { VSelect } from '~/shared/ui'
-import { useModels } from '~/shared/api'
+import { useMarks } from '~/shared/api'
+import { VSelect } from '~/shared/ui/forms/VSelect'
 
 defineEmits<{
   (e: 'update:modelValue', modelValue: number): void
@@ -10,13 +10,9 @@ defineEmits<{
 const props = defineProps<{
   modelValue: number
   id: number
-  markId: number
 }>()
 
-const { models } = useModels(
-  computed(() => props.id),
-  computed(() => props.markId)
-)
+const { marks } = useMarks(computed(() => props.id))
 </script>
 
 <template>
@@ -24,7 +20,7 @@ const { models } = useModels(
     :model-value="modelValue"
     @update:model-value="$emit('update:modelValue', +$event)"
   >
-    <option v-for="{ name, value } in models" :key="value" :value="value">
+    <option v-for="{ name, value } in marks" :key="value" :value="value">
       {{ name }}
     </option>
   </VSelect>
