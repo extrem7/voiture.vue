@@ -6,4 +6,9 @@ export const pages: RouteRecordRaw[] = [
     name: 'home',
     component: () => import('./home'),
   },
+  {
+    path: '/search',
+    name: 'search',
+    component: () => import('./search'),
+  },
 ]
