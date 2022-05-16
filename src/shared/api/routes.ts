@@ -1,7 +1,9 @@
 export const api = {
-  categories: () => '/categories',
+  categories: () => '/api/categories',
   models: (id: number, idMarks: number) =>
-    `/categories/${id}/marks/${idMarks}/models`,
-  marks: (id: number) => `/categories/${id}/marks`,
-  body: (id: number) => `/categories/${id}/bodystyles`,
+    `/api/categories/${id}/marks/${idMarks}/models`,
+  marks: (id: number) => `/api/categories/${id}/marks`,
+  body: (id: number) => `/api/categories/${id}/bodystyles`,
+  popular: (id: number) =>
+    `/demo/bu/mainPage/categories/popularBrands?id=${id}`,
 }

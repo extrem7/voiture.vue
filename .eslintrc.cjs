@@ -48,7 +48,6 @@ module.exports = {
     // base rules
     'no-console': 'warn',
     'no-debugger': 'warn',
-
     'arrow-spacing': 'error',
     'no-duplicate-imports': 'error',
     'no-var': 'error',

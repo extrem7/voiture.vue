@@ -23,10 +23,10 @@ export function useModels(
   idMarks: Ref<number>,
   useFetchOptions: UseFetchOptions = {}
 ) {
-  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+  const { data, ...rest } = useAutoRia(
     computed(() => api.models(id.value, idMarks.value)),
     { ...useFetchOptions, refetch: true }
-  ).json()
+  ).json<CategoriesResponse>()
 
   const models = computed(() => data.value ?? [])
 
@@ -37,10 +37,10 @@ export function useMarks(
   id: Ref<number>,
   useFetchOptions: UseFetchOptions = {}
 ) {
-  const { data, ...rest } = useAutoRia<CategoriesResponse>(
+  const { data, ...rest } = useAutoRia(
     computed(() => api.marks(id.value)),
     { ...useFetchOptions, refetch: true }
-  ).json()
+  ).json<CategoriesResponse>()
 
   const marks = computed(() => data.value ?? [])
 
@@ -59,4 +59,19 @@ export function useBody(
   const body = computed(() => data.value ?? [])
 
   return { body, ...rest }
+}
+
+type PopularResponse = { id: string; marka: number[] }
+export function usePopular(
+  id: Ref<number>,
+  useFetchOptions: UseFetchOptions = {}
+) {
+  const { data, ...rest } = useAutoRia(
+    computed(() => api.popular(id.value)),
+    { ...useFetchOptions, refetch: true }
+  ).json<PopularResponse>()
+
+  const popular = computed(() => data.value)
+
+  return { popular, ...rest }
 }
