@@ -1,0 +1,2 @@
+import{j as t,B as r}from"./vue.esm-bundler.0b7946ce.js";import{V as o}from"./VMenu.e61b844d.js";import"./VSelect.72a08062.js";import"./VMenuLink.1f67d9b4.js";const s={title:"UI/Menu/VMenuDropdown",component:o},n=e=>t(o,e,{default:()=>[r("Menu Dropdown")]});n.storyName="VMenuDropdown";const u=["Default"];export{n as Default,u as __namedExportsOrder,s as default};
+//# sourceMappingURL=VMenuDropdown.stories.f3a95aa5.js.map
