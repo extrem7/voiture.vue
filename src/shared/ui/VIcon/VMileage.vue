@@ -1,0 +1,13 @@
+<script setup lang="ts"></script>
+
+<template>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16">
+    <circle cx="7.5" cy="7.5" r="7" stroke="#DB5C4C" />
+    <circle cx="7.5" cy="7.5" r="1" stroke="#DB5C4C" />
+    <path d="m8.5 6.5 2-2" stroke="#DB5C4C" />
+    <path
+      d="m7.5 0.5v1.5m-7 5.5h1.5m12.5 0h-1.5m-10.5-5 1 1m9-1-1 1"
+      stroke="#DB5C4C"
+    />
+  </svg>
+</template>

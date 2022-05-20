@@ -1,0 +1,8 @@
+export { default as VMileage } from './VMileage.vue'
+export { default as VLocation } from './VLocation.vue'
+export { default as VFuel } from './VFuel.vue'
+export { default as VGearbox } from './VGearbox.vue'
+export { default as VCar } from './VCar.vue'
+export { default as VTime } from './VTime.vue'
+export { default as VCompare } from './VCompare.vue'
+export { default as VFavorite } from './VFavorite.vue'
