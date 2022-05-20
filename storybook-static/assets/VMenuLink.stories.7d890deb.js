@@ -1,2 +1,0 @@
-import{j as r,B as a}from"./vue.esm-bundler.0b7946ce.js";import{_ as e}from"./VMenuLink.1f67d9b4.js";const m={title:"UI/Menu/VMenuLink",component:e},o=n=>r(e,n,{default:()=>[a("Menu Link")]}),t=o.bind({});t.args={dropdown:!0};t.storyName="Drop down";o.storyName="VMenuLink";const p=["Default","Dropdown"];export{o as Default,t as Dropdown,p as __namedExportsOrder,m as default};
-//# sourceMappingURL=VMenuLink.stories.7d890deb.js.map
