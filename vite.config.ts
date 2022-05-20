@@ -1,6 +1,6 @@
-import { fileURLToPath, URL } from 'url'
+import { URL, fileURLToPath } from 'url'
 
-import { defineConfig, UserConfig } from 'vite'
+import { UserConfig, defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 
